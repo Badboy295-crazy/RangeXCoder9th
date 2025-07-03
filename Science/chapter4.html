@@ -109,6 +109,31 @@
     .back-button:hover {
       background-color: #9f1239;
     }
+    #lockModal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    #timer {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #d9534f;
+    }
+    
   </style>
 
   
@@ -119,6 +144,18 @@
   <button class="theme-toggle" onclick="toggleTheme()">
     <i class="ri-moon-clear-line"></i>
   </button>
+
+  
+  <!-- Unlock Modal -->
+
+  <div id="lockModal">
+    <div class="modal-content">
+      <h2>🔒 Access Locked</h2>
+      <p>Complete short link to unlock for 24 hours.</p>
+      <button class="btn btn-primary" onclick="redirectToShortLink('')">Unlock Now</button>
+      <div id="timer" style="display:none;"></div>
+    </div>
+  </div>
 
   <!-- Main Lecture List -->
   <div class="container my-5" id="lectureList">
